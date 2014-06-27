@@ -2,7 +2,7 @@ Aggregate sql statistic, sort and show
 
 
 1) Get this : git clone https://github.com/progman/sqltop.git
-2) Make this: git submodule update --init && make x64 && ./test.sh
+2) Make this: git submodule update --init && make x64
 3) Use this : sqltop SQL_STAT_FILE
 4) Enjoy!
 
