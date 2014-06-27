@@ -11,7 +11,7 @@ Format SQL_STAT_FILE is easy, see text file example_sql_stat
 
 UNIXTIME MICROTIME SQL_TAG SQL_STR
 
-UNIXTIME  - (uint64_t) time start execution sql query in unixtime, example: 1402382914
-MICROTIME - (uint64_t) time execution sql query in microseconds (1/1000000 sec), example: 1
+UNIXTIME  - (uint64_t) time start exec sql query in unixtime, example: 1402382914
+MICROTIME - (uint64_t) time exec sql query in microseconds, example: 1
 SQL_TAG   - (string)   uniq sql query name, example: SQL001
-SQL_STR   - (hex string) hex encoded sql query, example: 53454c454354204e4f5728293b0a
+SQL_STR   - (hex) hex encoded sql query, example: 53454c454354204e4f5728293b0a
