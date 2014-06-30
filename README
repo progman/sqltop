@@ -15,3 +15,17 @@ UNIXTIME  - (uint64_t) time start exec sql query (unixtime), example: 1402382914
 MICROTIME - (uint64_t) time exec sql query (microseconds), example: 1
 SQL_TAG   - (string)   uniq sql query name, example: SQL001
 SQL_STR   - (hex) hex encoded sql query, example: 53454c454354204e4f5728293b0a
+
+
+Example make stat in PHP
+
+	$time1 = microtime();
+
+	HERE SQL_QUERY
+
+	$time2 = microtime();
+	list($usec1, $sec1) = explode(" ", $time1);
+	list($usec2, $sec2) = explode(" ", $time2);
+	$work_time = (($sec2 - $sec1) * 1000000) + intval($usec2 * 1000000) - intval($usec1 * 1000000);
+
+	echo $out = time().' '.$work_time.' '.$sql_tag.' '.bin2hex($sql_str)."\n";
