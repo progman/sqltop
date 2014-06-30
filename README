@@ -1,4 +1,5 @@
 Aggregate sql statistic, sort and show
+======================================
 
 
 1) Get this : git clone https://github.com/progman/sqltop.git
@@ -7,7 +8,10 @@ Aggregate sql statistic, sort and show
 4) Enjoy!
 
 
-Format SQL_STAT_FILE is easy, see text file example_sql_stat
+Format SQL_STAT_FILE
+--------------------
+
+Is easy, see text file example_sql_stat
 
 UNIXTIME MICROTIME SQL_TAG SQL_STR
 
@@ -18,14 +22,17 @@ SQL_STR   - (hex) hex encoded sql query, example: 53454c454354204e4f5728293b0a
 
 
 Example make stat in PHP
+------------------------
 
-	$time1 = microtime();
+$time1 = microtime();
 
-	HERE SQL_QUERY
+HERE SQL_QUERY
 
-	$time2 = microtime();
-	list($usec1, $sec1) = explode(" ", $time1);
-	list($usec2, $sec2) = explode(" ", $time2);
-	$work_time = (($sec2 - $sec1) * 1000000) + intval($usec2 * 1000000) - intval($usec1 * 1000000);
+$time2 = microtime();
+list($usec1, $sec1) = explode(" ", $time1);
+list($usec2, $sec2) = explode(" ", $time2);
+$work_time = ($sec2 - $sec1) * 1000000;
+$work_time += intval($usec2 * 1000000);
+$work_time -= intval($usec1 * 1000000);
 
-	echo $out = time().' '.$work_time.' '.$sql_tag.' '.bin2hex($sql_str)."\n";
+echo time().' '.$work_time.' '.$sql_tag.' '.bin2hex($sql_str)."\n";
