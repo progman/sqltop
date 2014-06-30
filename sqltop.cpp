@@ -491,17 +491,18 @@ int scan(void *pmmap_void, size_t size, const char *psqltag)
 
 	printf("total query count : %lu\n", line_count);
 	printf("total query time  : %lu\n", global::total_work_time);
-	printf("total log time    : %lu\n", (global::unixtime_max - global::unixtime_min) * 1000000);
 
 
 	uint64_t delta_unixtime = global::unixtime_max - global::unixtime_min;
 	if (delta_unixtime == 0)
 	{
-		printf("load time         : 99.99%%\n");
+		printf("total log time    : %lu\n", 0L);
+		printf("load time         : 100.00%%\n");
 	}
 	else
 	{
-		printf("load time         : %02.02f%%\n", (global::total_work_time / 1000000) / ((delta_unixtime) / 100.0));
+		printf("total log time    : %lu\n", delta_unixtime * 1000000);
+		printf("load time         : %02.02f%%\n", (global::total_work_time) / ((delta_unixtime * 1000000) / 100.0));
 	}
 
 
