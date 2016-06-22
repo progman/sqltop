@@ -1,5 +1,5 @@
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
-// 0.0.1
+// 0.0.2
 // Alexey Potehin <gnuplanet@gmail.com>, http://www.gnuplanet.ru/doc/cv
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
 #include <errno.h>
@@ -75,7 +75,7 @@ namespace global
 			}
 		}
 
-		static bool sort1(const sql_stat_t& x1, const sql_stat_t& x2)
+		static bool sort1(const sql_stat_t &x1, const sql_stat_t &x2)
 		{
 			if (x1.work_time_all > x2.work_time_all)
 			{
@@ -84,7 +84,7 @@ namespace global
 			return false;
 		}
 
-		static bool sort2(const sql_stat_t& x1, const sql_stat_t& x2)
+		static bool sort2(const sql_stat_t &x1, const sql_stat_t &x2)
 		{
 			if (global::sort_type == global::SORT_MIN)
 			{
